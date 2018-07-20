@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 export default class CommentInput extends Component {
-//   static propTypes = {
-//     username: PropTypes.any,
-//     onSubmit: PropTypes.func,
-//     onUserNameInputBlur: PropTypes.func
-//   }
+  static propTypes = {
+    username: PropTypes.any,
+    onSubmit: PropTypes.func,
+    onUserNameInputBlur: PropTypes.func
+  }
 
   static defaultProps = {
     username: ''
@@ -24,32 +24,32 @@ export default class CommentInput extends Component {
   }
 
   handleUsernameBlur (event) {
-    // if (this.props.onUserNameInputBlur) {
-    //   this.props.onUserNameInputBlur(event.target.value)
-    // }
+    if (this.props.onUserNameInputBlur) {
+      this.props.onUserNameInputBlur(event.target.value)
+    }
   }
 
   handleUsernameChange (event) {
-    // this.setState({
-    //   username: event.target.value
-    // })
+    this.setState({
+      username: event.target.value
+    })
   }
 
   handleContentChange (event) {
-    // this.setState({
-    //   content: event.target.value
-    // })
+    this.setState({
+      content: event.target.value
+    })
   }
 
   handleSubmit () {
-    // if (this.props.onSubmit) {
-    //   this.props.onSubmit({
-    //     username: this.state.username,
-    //     content: this.state.content,
-    //     createdTime: +new Date()
-    //   })
-    // }
-    // this.setState({ content: '' })
+    if (this.props.onSubmit) {
+      this.props.onSubmit({
+        username: this.state.username,
+        content: this.state.content,
+        createdTime: +new Date()
+      })
+    }
+    this.setState({ content: '' })
   }
 
   render () {
