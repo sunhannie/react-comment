@@ -1,25 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import PropTypes from 'prop-types';
+// import CommentInput from './components/CommentInput';
 
-class App extends React.Component {
+// ReactDOM.render(
+//   <CommentInput/>,
+//   document.getElementById('root')
+// );
 
-  constructor(props) {
-    super(props);
-    this.state = {message: 'Hello!'};
-  }
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import CommentApp from './containers/CommentApp'
+import commentsReducer from './reducers/comments'
+import './index.css'
 
-
-  render() {
-    return (
-    	<div>
-1111  
-      </div>
-    );
-  }
-}
+const store = createStore(commentsReducer)
 
 ReactDOM.render(
-  <App/>,
+  <Provider store={store}>
+    <CommentApp />
+  </Provider>,
   document.getElementById('root')
 );
