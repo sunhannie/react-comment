@@ -1,17 +1,19 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CommentInput from '../components/CommentInput'
 import { addComment } from '../reducers/comments'
+import PropTypes from 'prop-types'
 
 class CommentInputContainer extends Component {
-//   static propTypes = {
-//     comments: PropTypes.array,
-//     onSubmit: PropTypes.func
-//   }
+  static propTypes = {
+    comments: PropTypes.array,
+    onSubmit: PropTypes.func
+  }
 
   constructor () {
     super()
     this.state = { username: '' }
+    console.log(this.props);
   }
 
   componentWillMount () {
@@ -51,23 +53,23 @@ class CommentInputContainer extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     comments: state.comments
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    comments: state.comments
+  }
+}
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onSubmit: (comment) => {
-//       dispatch(addComment(comment))
-//     }
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSubmit: (comment) => {
+      dispatch(addComment(comment))
+    }
+  }
+}
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(CommentInputContainer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CommentInputContainer)
 
-export default CommentInputContainer
+// export default CommentInputContainer

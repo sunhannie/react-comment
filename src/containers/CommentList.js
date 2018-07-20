@@ -1,14 +1,14 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CommentList from '../components/CommentList'
 import { initComments, deleteComment } from '../reducers/comments'
-
+import PropTypes from 'prop-types'
 class CommentListContainer extends Component {
-//   static propTypes = {
-//     comments: PropTypes.array,
-//     initComments: PropTypes.func,
-//     onDeleteComment: PropTypes.func
-//   }
+  static propTypes = {
+    comments: PropTypes.array,
+    initComments: PropTypes.func,
+    onDeleteComment: PropTypes.func
+  }
 
   componentWillMount () {
     // this._loadComments()
@@ -47,20 +47,20 @@ const mapStateToProps = (state) => {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     initComments: (comments) => {
-//       dispatch(initComments(comments))
-//     },
-//     onDeleteComment: (commentIndex) => {
-//       dispatch(deleteComment(commentIndex))
-//     }
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    initComments: (comments) => {
+      dispatch(initComments(comments))
+    },
+    onDeleteComment: (commentIndex) => {
+      dispatch(deleteComment(commentIndex))
+    }
+  }
+}
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(CommentListContainer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CommentListContainer)
 
-export default CommentListContainer
+// export default CommentListContainer

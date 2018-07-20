@@ -1,12 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import PropTypes from 'prop-types';
-// import CommentInput from './components/CommentInput';
-
-// ReactDOM.render(
-//   <CommentInput/>,
-//   document.getElementById('root')
-// );
 
 import React from 'react'
 import ReactDOM from 'react-dom'
