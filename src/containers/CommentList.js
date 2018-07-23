@@ -11,28 +11,30 @@ class CommentListContainer extends Component {
   }
 
   componentWillMount () {
-    // this._loadComments()
+    this._loadComments()
   }
 
   _loadComments () {
-    // let comments = localStorage.getItem('comments')
-    // comments = comments ? JSON.parse(comments) : []
-    // this.props.initComments(comments)
+    let comments = localStorage.getItem('comments')
+    comments = comments ? JSON.parse(comments) : []
+    this.props.initComments(comments)
   }
 
   handleDeleteComment (index) {
-    // const { comments } = this.props
-    // const newComments = [
-    //   ...comments.slice(0, index),
-    //   ...comments.slice(index + 1)
-    // ]
-    // localStorage.setItem('comments', JSON.stringify(newComments))
-    // if (this.props.onDeleteComment) {
-    //   this.props.onDeleteComment(index)
-    // }
+    const { comments } = this.props
+    const newComments = [
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
+    ]
+    localStorage.setItem('comments', JSON.stringify(newComments))
+    if (this.props.onDeleteComment) {
+      this.props.onDeleteComment(index)
+    }
   }
 
   render () {
+    // this.props为{comments: Array(4), initComments: ƒ, onDeleteComment: ƒ}
+    // console.log(this.props)
     return (
       <CommentList
         comments={this.props.comments}

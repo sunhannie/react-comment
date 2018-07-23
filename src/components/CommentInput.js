@@ -10,6 +10,7 @@ export default class CommentInput extends Component {
   static defaultProps = {
     username: ''
   }
+  // this.state包含{username: "asfRTssafadf", content: ""}
 
   constructor (props) {
     super(props)
@@ -22,6 +23,7 @@ export default class CommentInput extends Component {
   componentDidMount () {
     this.textarea.focus()
   }
+// onBlur和onChange分贝处理不同的事，onBlur执行保存，onChange执行setState
 
   handleUsernameBlur (event) {
     if (this.props.onUserNameInputBlur) {
@@ -41,6 +43,7 @@ export default class CommentInput extends Component {
     })
   }
 
+// handleSubmitComment (comment) 中有this.props.onSubmit(comment)
   handleSubmit () {
     if (this.props.onSubmit) {
       this.props.onSubmit({
@@ -53,6 +56,8 @@ export default class CommentInput extends Component {
   }
 
   render () {
+    // this.props为{username: "asfRTssafadf", onUserNameInputBlur: ƒ, onSubmit: ƒ}
+    
     return (
       <div className='comment-input'>
         <div className='comment-field'>
