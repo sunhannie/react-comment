@@ -59,6 +59,7 @@ class CommentInputContainer extends Component {
   }
 }
 
+// 把返回的值全部通过 `props` 方式传递给此组件。这个state参数最后是在connect中是获取store.getState()
 const mapStateToProps = (state) => {
   return {
     comments: state.comments
@@ -66,6 +67,7 @@ const mapStateToProps = (state) => {
 }
 
 // 当onSubmit会触发addComment，comment在CommentInput.js中可以知道是包含username、content、createdTime的对象，然后通过addComment传到reducer
+// 
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (comment) => {
