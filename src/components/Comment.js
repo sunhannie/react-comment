@@ -68,7 +68,7 @@ export default class Comment extends Component {
         <span
           onClick={this.handleDeleteComment.bind(this)}
           className='comment-delete'>
-          删除
+          删除1
         </span>
       </div>
     )
