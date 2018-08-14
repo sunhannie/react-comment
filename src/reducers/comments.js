@@ -5,6 +5,7 @@ const DELETE_COMMENT = 'DELETE_COMMENT'
 
 // reducer 是包含参数（state, action），既能获取初始化数据的功能，也充当了生成更新数据的功能，返回state。某处触发action，就肯定会自动触发reducer，这样会返回新的状态
 // action是从哪里传进来的？createStore返回 { getState, dispatch, subscribe }
+// action.comment来自于action，触发action，再在reducer中处理state变化
 export default function (state, action) {
   if (!state) {
     state = { comments: [] }
