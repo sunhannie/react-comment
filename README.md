@@ -20,3 +20,6 @@ comment list包含初始化和删除
 
 ## 出现的问题
 React.PropTypes is deprecated since React 15.5.0, use the npm module prop-types instead  react/no-deprecated
+
+
+不能引入scss，这是怎么更改配置文件

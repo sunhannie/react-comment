@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import CommentInput from './commentInput/commentInput'
 export default class Comment extends Component {
   static propTypes = {
     comment: PropTypes.object.isRequired,
@@ -70,6 +71,7 @@ export default class Comment extends Component {
           className='comment-delete'>
           删除1
         </span>
+        {/*<CommentInput />*/}
       </div>
     )
   }
