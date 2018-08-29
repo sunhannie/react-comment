@@ -23,3 +23,8 @@ React.PropTypes is deprecated since React 15.5.0, use the npm module prop-types 
 
 
 不能引入scss，这是怎么更改配置文件
+
+
+## todo
+使用react16.4技术更新
+
